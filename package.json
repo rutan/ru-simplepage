@@ -1,0 +1,16 @@
+{
+  "name": "@rutan/ru-simplepage",
+  "version": "1.0.0",
+  "repository": "git@github.com:rutan/ru-simplepage-template-dev.git",
+  "author": "ru_shalm <ru_shalm@hazimu.com>",
+  "license": "MIT",
+  "bin": {
+    "ru-simplepage": "index.js"
+  },
+  "dependencies": {
+    "colors": "^1.1.2",
+    "command-line-args": "^4.0.5",
+    "command-line-usage": "^4.0.0",
+    "fs-extra": "^3.0.1"
+  }
+}

@@ -1,0 +1,27 @@
+<%
+const titleStr = typeof(title) !== 'undefined' ? `${title} - ${settings.title}` : (settings.title || '');
+const descriptionStr = typeof(description) !== 'undefined' ? description : (settings.description || '');
+const imagePath = typeof(image) !== 'undefined' ? image : (settings.image || '');
+const imageURL = imagePath.match(/^(https?:)?\/\//) ? imagePath : `${settings.host}/${imagePath}`;
+const faviconURL = typeof(favicon) !== 'undefined' ? favicon : '/favicon.ico';
+const iconURL = typeof(icon) !== 'undefined' ? icon : '/apple-touch-icon.png';
+-%>
+<meta charset="UTF-8">
+<title><%= titleStr %></title>
+<meta name="description" content="<%= descriptionStr %>">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta property="og:type" content="website">
+<meta property="og:title" content="<%= titleStr %>">
+<meta property="og:site_name"  content="<%= settings.title %>">
+<meta property="og:description" content="<%= descriptionStr %>">
+<meta property="og:url" content="<%= `${settings.host}/${settings.currentPath}` %>">
+<meta property="og:image" content="<%= imageURL %>">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="<%= titleStr %>">
+<meta name="twitter:description" content="<%= descriptionStr %>">
+<meta name="twitter:url" content="<%= `${settings.host}/${settings.currentPath}` %>">
+<meta name="twitter:image" content="<%= imageURL %>">
+<link rel="canonical" href="<%= `${settings.host}/${settings.currentPath}` %>">
+<link rel="shortcut icon" href="<%= faviconURL %>">
+<link rel="apple-touch-icon" href="<%= iconURL %>">
+<link rel="icon" href="<%= iconURL %>">
